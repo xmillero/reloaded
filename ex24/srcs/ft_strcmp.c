@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmillero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:28:22 by xmillero          #+#    #+#             */
-/*   Updated: 2016/11/11 15:24:27 by xmillero         ###   ########.fr       */
+/*   Created: 2016/11/08 11:32:12 by xmillero          #+#    #+#             */
+/*   Updated: 2016/11/09 11:04:13 by xmillero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_strdup(char *src)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*dest;
-	int		i;
-	int		size;
+	int i;
+	int r;
 
 	i = 0;
-	size = 0;
-	while (src[size] != '\0')
+	r = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		size++;
-	}
-	dest = malloc(sizeof(*dest) * size + 1);
-	if (dest == NULL)
-		return (NULL);
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+		r = s2[i] - s1[i];
+		if (r != 0)
+			return (r);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (r);
 }

@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmillero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:28:22 by xmillero          #+#    #+#             */
-/*   Updated: 2016/11/11 15:24:27 by xmillero         ###   ########.fr       */
+/*   Created: 2016/11/04 15:30:47 by xmillero          #+#    #+#             */
+/*   Updated: 2016/11/04 16:03:57 by xmillero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+void	ft_putchar (char c);
 
-char	*ft_strdup(char *src)
+void	ft_ft(int *nbr)
 {
-	char	*dest;
-	int		i;
-	int		size;
-
-	i = 0;
-	size = 0;
-	while (src[size] != '\0')
-	{
-		size++;
-	}
-	dest = malloc(sizeof(*dest) * size + 1);
-	if (dest == NULL)
-		return (NULL);
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	*nbr = 42;
 }

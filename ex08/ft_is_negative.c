@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmillero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:28:22 by xmillero          #+#    #+#             */
-/*   Updated: 2016/11/11 15:24:27 by xmillero         ###   ########.fr       */
+/*   Created: 2016/11/04 14:51:05 by xmillero          #+#    #+#             */
+/*   Updated: 2016/11/07 17:24:43 by xmillero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+void	ft_putchar(char c);
 
-char	*ft_strdup(char *src)
+void	ft_is_negative(int nb)
 {
-	char	*dest;
-	int		i;
-	int		size;
-
-	i = 0;
-	size = 0;
-	while (src[size] != '\0')
-	{
-		size++;
-	}
-	dest = malloc(sizeof(*dest) * size + 1);
-	if (dest == NULL)
-		return (NULL);
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	ft_putchar(nb >= 0 ? 'P' : 'N');
 }

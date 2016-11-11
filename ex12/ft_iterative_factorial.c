@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmillero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:28:22 by xmillero          #+#    #+#             */
-/*   Updated: 2016/11/11 15:24:27 by xmillero         ###   ########.fr       */
+/*   Created: 2016/11/07 11:31:57 by xmillero          #+#    #+#             */
+/*   Updated: 2016/11/07 13:29:15 by xmillero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_strdup(char *src)
+int	ft_iterative_factorial(int nb)
 {
-	char	*dest;
-	int		i;
-	int		size;
+	int res;
 
-	i = 0;
-	size = 0;
-	while (src[size] != '\0')
+	res = 1;
+	if (nb < 0)
 	{
-		size++;
+		return (0);
 	}
-	dest = malloc(sizeof(*dest) * size + 1);
-	if (dest == NULL)
-		return (NULL);
-	while (src[i] != '\0')
+	if (nb == 0)
 	{
-		dest[i] = src[i];
-		i++;
+		return (1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (nb <= 12)
+	{
+		while (nb >= 1)
+		{
+			res = res * nb;
+			nb = nb - 1;
+		}
+		return (res);
+	}
+	return (0);
 }
